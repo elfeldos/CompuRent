@@ -1,7 +1,8 @@
 class ComputersController < ApplicationController
-  def index
-    @computers = Computer.all
-  end
+  # code to display all is in pages_controller because of landing page
+  # def index
+  #   @computers = Computer.all
+  # end
 
   def new
     @computers = Computer.new
