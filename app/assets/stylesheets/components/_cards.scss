@@ -5,6 +5,9 @@
   background: $dark-blue;
   color: $light-gray;
   border: 0.7px solid $light-gray;
+  display: flex;
+  flex-direction: column;
+
 
   &:hover{
     border: 0.7px solid $neon-blue;
@@ -20,10 +23,9 @@
 
   h2 {
     font-size: 16px;
-    font-weight: bold;
     margin: 0;
     font-family: $oswald-font;
-    font-weight: 200;
+    font-weight: 500;
   }
 
   p {
@@ -37,5 +39,17 @@
 
   .card-product-infos {
     padding: 16px;
+  }
+
+  h3{
+    font-family: $tech-font;
+    font-size: 12px;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0;
+  }
+
+  .card-price-km{
+    padding-top: 18px;
   }
 }

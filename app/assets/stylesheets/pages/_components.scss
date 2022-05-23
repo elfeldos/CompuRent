@@ -2,3 +2,8 @@ body {
   background-color: $dark-blue;
   color: $light-gray;
 }
+
+.button-container{
+  display: flex;
+  align-items: center;
+}

@@ -1,5 +1,6 @@
-/* Primary button */
+/* Primary button neon blue */
 .primary-button {
+  margin: 10px;
   font-family: $tech-font;
   font-size: 12px;
   letter-spacing: 1px;
@@ -28,8 +29,40 @@
   }
 }
 
-/* Secondary button */
+/* Primary button neon purple */
+.primary-button-purple {
+  margin: 10px;
+  font-family: $tech-font;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  background-color: $light-gray;
+  color: $dark-blue;
+  cursor: pointer;
+  border: 3px solid $neon-purple;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px $neon-purple, 2px 2px 0px 0px $neon-purple, 3px 3px 0px 0px $neon-purple, 4px 4px 0px 0px $neon-purple, 5px 5px 0px 0px $neon-purple;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+  }
+}
+
+@media (min-width: 768px) {
+  .primary-button {
+    padding: 0.25em 0.75em;
+  }
+}
+
+/* Secondary button neon blue*/
 .secondary-button {
+  margin: 10px;
   align-items: center;
   background-color: $light-gray;
   border: 2px solid $neon-blue;
@@ -53,6 +86,67 @@
 
   &:after {
     background-color: $neon-blue;
+    content: "";
+    display: block;
+    height: 34px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(5px, 3px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+  }
+
+  &:hover:after {
+    transform: translate(0, 0);
+  }
+
+
+  &:active {
+    background-color: $light-gray;
+    outline: 0;
+  }
+
+  &:hover {
+    outline: 0;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .secondary-button {
+    padding: 0 18px;
+  }
+}
+
+
+/* Secondary button neon purple*/
+.secondary-button-purple {
+  margin: 10px;
+  align-items: center;
+  background-color: $light-gray;
+  border: 2px solid $neon-purple;
+  box-sizing: border-box;
+  color: $dark-blue;
+  cursor: pointer;
+  display: flex;
+  font-family: $tech-font;
+  font-size: 12px;
+  height: 34px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 18px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &:after {
+    background-color: $neon-purple;
     content: "";
     display: block;
     height: 34px;
