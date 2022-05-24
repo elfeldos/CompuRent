@@ -2,15 +2,16 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 54px;
   height: 277px;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 
   h1 {
     font-family: $oswald-font;
     margin: 0;
     color: $light-gray;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
     font-size: 32px;
     font-weight: bold;
     padding-bottom: 14px;
@@ -20,12 +21,10 @@
     font-family: $tech-font;
     font-size: 20px;
     color: $light-gray;
-    opacity: .9;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
     margin: 0;
     padding-bottom: 44px;
   }
-
   .header-point-color {
     display: flex;
   }
@@ -33,4 +32,12 @@
   .point{
     color: $neon-blue;
   }
+
+}
+.header-point-color {
+  display: flex;
+}
+
+.point{
+  color: $neon-blue;
 }

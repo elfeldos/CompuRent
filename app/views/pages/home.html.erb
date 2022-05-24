@@ -1,11 +1,13 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1587202372634-32705e3bf49c?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340);">
-    <div class="header-point-color">
-      <h1>CompuRent</h1>
-      <h1 class="point">.</h1>
+    <div class="container">
+      <div class="header-point-color">
+        <h1>CompuRent</h1>
+        <h1 class="point">.</h1>
+      </div>
+      <p>Don’t buy, rent! The latest computer technology across the street.</p>
+      <button class="primary-button-purple"><%= link_to "Apply now", new_user_registration_path %></button>
     </div>
-    <p>Don’t buy, rent! The latest computer technology across the street.</p>
-    <button class="primary-button-purple"><%= link_to "Apply now", new_user_registration_path %></button>
 </div>
 
 
@@ -27,4 +29,27 @@
       </div>
   </ul>
   <% end %>
+</div>
+
+
+<div class="container-presentation">
+  <div class="header-point-color" id="title-how">
+          <h1>How it works</h1>
+          <h1 class="point">.</h1>
+        </div>
+  <div class="card-presentation-grid">
+    <div class="card-presentation">
+      <%= image_tag 'search.svg' %>
+      <h1>Search</h1>
+    </div>
+    <div class="card-presentation">
+      <%= image_tag 'pay.svg' %>
+      <h1>Rent</h1>
+    </div>
+    <div class="card-presentation">
+      <%= image_tag 'computer.svg' %>
+      <h1>Enjoy</h1>
+    </div>
+  </div>
+  <button class="primary-button-purple"><%= link_to "More details", new_user_registration_path, class:"button-details" %></button>
 </div>
