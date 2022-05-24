@@ -1,0 +1,56 @@
+.card-product {
+  overflow: hidden;
+  height: 300px;
+  width: 210px;
+  background: $dark-blue;
+  color: $light-gray;
+  border: 0.7px solid $light-gray;
+  display: flex;
+  flex-direction: column;
+
+
+  &:hover{
+    border: 0.7px solid $neon-blue;
+    transition: all 1.5s;
+  }
+
+  img {
+    height: 160px;
+    width: 100%;
+    object-fit: cover;
+    padding: 5px;
+  }
+
+  h2 {
+    font-size: 16px;
+    margin: 0;
+    font-family: $oswald-font;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .9;
+    margin-bottom: 0;
+    margin-top: 8px;
+    font-family: $tech-font;
+  }
+
+  .card-product-infos {
+    padding: 16px;
+  }
+
+  h3{
+    font-family: $tech-font;
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .card-price-km{
+    padding-top: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
