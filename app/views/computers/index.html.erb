@@ -1,0 +1,30 @@
+<h2>All offerings</h2>
+
+<div class="d-flex justify-content-between align-items-center">
+  <div class="searchbar-container">
+    <%= form_tag "/computers", method: "GET" do %>
+      <%= text_field_tag :search_by_name, params[:search_by_name], placeholder: "Search by name" %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </div>
+
+  <div class="searchbar-container" id="searchbar-right">
+    <%= form_tag computers_path, method: :get do %>
+      <%= select_tag(:category,
+          options_for_select(Computer::CATEGORIES),
+          # class: "form-control shadow-none form-width",
+          prompt: "Category") %>
+      <%= submit_tag "Search"%>
+    <% end %>
+  </div>
+</div>
+
+
+<ul style="background-color: white">
+  <% @computers.each do |c| %>
+    <%= image_tag(c.image) %>
+    <li><%= c.name %></li>
+    <li><%= c.year %></li>
+    <li><%= c.price %></li>
+  <% end %>
+</ul>
