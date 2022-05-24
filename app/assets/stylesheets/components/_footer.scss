@@ -1,0 +1,33 @@
+.footer {
+  background: $dark-blue;
+  border-top: 0.7px solid $neon-blue;
+  border-bottom: 0.7px solid $neon-blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: $light-gray;
+
+  .footer-copyright{
+    font-family: $tech-font;
+    font-size: 12px;
+  }
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: $light-gray;
+  opacity: 0.5;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: $neon-blue;
+}

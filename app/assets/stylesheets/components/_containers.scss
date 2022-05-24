@@ -1,0 +1,20 @@
+.container {
+ width: 992px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap:16px;
+}
+
+.card-presentation-grid {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.container-presentation {
+  text-align: center;
+}
