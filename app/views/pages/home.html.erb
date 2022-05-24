@@ -2,8 +2,8 @@
   <h1>Landing page</h1>
   <p>Find me in app/views/pages/home.html.erb</p>
   <ul>
-    <% @computers.each do |c| %>
-      <p>picture</p>
+    <% @computers.last(4).each do |c| %>
+      <%= image_tag(c.image) %>
       <li><%= c.name %></li>
       <li><%= c.year %></li>
       <li><%= c.price %></li>
