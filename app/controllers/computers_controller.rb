@@ -1,8 +1,19 @@
 class ComputersController < ApplicationController
   # code to display all is in pages_controller because of landing page
-  # def index
-  #   @computers = Computer.all
-  # end
+  def index
+    @computers = Computer.all
+
+    if params[:search_by_name].present?
+      # @computers = Computer.where(name: params[:search_by_name])
+      @computers = Computer.where('name ILIKE ?', "%#{params[:search_by_name]}%")
+    end
+    # raise
+    if params[:category] == "PC"
+      @computers = Computer.where(category: "PC")
+    elsif params[:category] == "Laptop"
+      @computers = Computer.where(category: "Laptop")
+    end
+  end
 
   def new
     @computers = Computer.new
