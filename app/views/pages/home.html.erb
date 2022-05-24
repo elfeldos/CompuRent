@@ -1,9 +1,14 @@
 <div class="container">
   <h1>Landing page</h1>
   <p>Find me in app/views/pages/home.html.erb</p>
-  <% @computers.each do |c| %>
-  <%= c.name %>
-  <%= c.year %>
-  <%= c.availiability %>
+  <ul>
+    <% @computers.each do |c| %>
+      <p>picture</p>
+      <li><%= c.name %></li>
+      <li><%= c.year %></li>
+      <li><%= c.price %></li>
+  </ul>
   <% end %>
+
+  <%= link_to "Register", new_user_registration_path %>
 </div>
