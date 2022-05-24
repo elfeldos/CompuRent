@@ -11,11 +11,15 @@
     </div>
 </div>
 
+ <div class="header-point-color" id="title-how">
+          <h1>Latest arrivals</h1>
+          <h1 class="point">.</h1>
+        </div>
 
 <div class="container cards-grid">
     <% @computers.last(4).each do |c| %>
       <div class="card-product">
-        <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364" />
+        <%= image_tag(c.image) %>
         <div class="card-product-infos">
           <div>
             <h2><%= c.name %></h2>
@@ -29,8 +33,12 @@
         </div>
       </div>
     <% end %>
+<<<<<<< HEAD
   </div>
 
+=======
+</div>
+>>>>>>> 2ce718d1f1db9d6c17e0b9c9569477116f00d2b4
 
 <div class="container-presentation">
   <div class="header-point-color" id="title-how">
