@@ -1,0 +1,42 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag "https://cdn-icons-png.flaticon.com/512/3474/3474353.png" %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item active-link">
+            <%= link_to "Home", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Messages", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://cdn-icons.flaticon.com/png/512/2202/premium/2202112.png?token=exp=1653382490~hmac=dfda303adc71636ac38a0329150f39c4r", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Explore", computers_path, class: "nav-link #{'active-link' if current_page?(computers_path)}" %>
+          </li>
+           <li class="nav-item">
+            <%= link_to "How it works", computers_path, class: "nav-link #{'active-link' if current_page?(computers_path)}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log in", new_user_session_path, class: "nav-link #{'active-link' if current_page?(new_user_session_path)}" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

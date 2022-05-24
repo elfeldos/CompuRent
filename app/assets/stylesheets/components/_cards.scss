@@ -44,12 +44,13 @@
   h3{
     font-family: $tech-font;
     font-size: 12px;
-    justify-content: space-between;
-    align-items: flex-end;
     margin: 0;
   }
 
   .card-price-km{
-    padding-top: 18px;
+    padding-top: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 }
