@@ -1,4 +1,4 @@
-<h2>All offerings</h2>
+<h2 style="text-align: center">All offerings</h2>
 
 <div class="d-flex justify-content-between align-items-center">
   <div class="searchbar-container">
@@ -13,18 +13,27 @@
       <%= select_tag(:category,
           options_for_select(Computer::CATEGORIES),
           # class: "form-control shadow-none form-width",
-          prompt: "Category") %>
-      <%= submit_tag "Search"%>
+          prompt: "Category", class: "search-field") %>
+      <%= submit_tag "Search", class: "submit-button-purple"%>
     <% end %>
   </div>
 </div>
 
-
-<ul style="background-color: white">
-  <% @computers.each do |c| %>
-    <%= image_tag(c.image) %>
-    <li><%= c.name %></li>
-    <li><%= c.year %></li>
-    <li><%= c.price %></li>
-  <% end %>
-</ul>
+<div class="container cards-grid">
+    <% @computers.each do |c| %>
+      <div class="card-product">
+        <%= image_tag(c.image) %>
+        <div class="card-product-infos">
+          <div>
+            <h2><%= c.name %></h2>
+            <h4><%= c.year %></h4>
+            <p class="card-details"><%= c.details[0..50]%> <%= '...' if c.details.length > 50 %></p>
+          </div>
+          <div class="card-price-km">
+            <h3><%= c.price %></h3>
+            <h3>1.3 km</h3>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>

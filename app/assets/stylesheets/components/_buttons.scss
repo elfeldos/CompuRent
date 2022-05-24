@@ -178,6 +178,52 @@
 
 }
 
+// submit button neon purple
+.submit-button-purple {
+  display: inline-block;
+  height: 27px;
+  background-color: $light-gray;
+  border: 2px solid $neon-purple;
+  color: $dark-blue;
+  cursor: pointer;
+  font-family: $tech-font;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &:after {
+    background-color: $neon-purple;
+    content: "";
+    display: block;
+    height: 34px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(5px, 3px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+  }
+
+  &:hover:after {
+    transform: translate(0, 0);
+  }
+
+
+  &:active {
+    background-color: $light-gray;
+    outline: 0;
+  }
+
+  &:hover {
+    outline: 0;
+  }
+
+}
+
 @media (min-width: 768px) {
   .secondary-button {
     padding: 0 18px;
