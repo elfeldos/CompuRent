@@ -1,0 +1,37 @@
+
+<div class="container">
+  <%= link_to computers_path do %>
+    <i class="fa-solid fa-arrow-left-long"></i>
+  <% end %>
+
+  <div class="big-card-details">
+    <div class="card-img-book">
+      <div>
+        <%= image_tag(@computer.image, class: "big-image") %>
+      </div>
+
+      <div class="box-item-square">
+        <h3> <%= @computer.name %></h3>
+        <%= image_tag("map.png", class: "map") %>
+        <div class="price-details">
+          <p id="price"><%= @computer.price %></p>
+          <p>€/month</p>
+        </div>
+        <p id="user"><%= @user.first_name %> 4.3 <i class="fa-solid fa-star"></i></p>
+        <p> <%= @computer.details %></p>
+        <button class="primary-button-purple"><%= link_to "Book", new_user_registration_path %></button>
+      </div>
+    </div>
+
+    <div class="box-item-flat">
+      <ul>
+        <li>Year: <%= @computer.year %></li>
+        <li>Precessor: <%= @computer.processor %></li>
+        <li>RAM: <%= @computer.ram %></li>
+        <li>Storage: <%= @computer.storage %></li>
+        <li>Graphic card: <%= @computer.graphic_card %></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
