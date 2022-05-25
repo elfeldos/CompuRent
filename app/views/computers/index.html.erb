@@ -22,9 +22,10 @@
 <div class="container cards-grid">
     <% @computers.each do |c| %>
       <div class="card-product">
-        <% if c.image.present? %>
-          <%= image_tag(c.image) %>
-        <% end %>
+        <%# <% if c.image.present? %>
+          <%#= image_tag(c.image) %>
+        <%# end %>
+        <%= cl_image_tag(c.photo.key, height: 300, width: 400, crop: :fill) %>
         <div class="card-product-infos">
           <div>
             <h2><%= c.name %></h2>
@@ -38,4 +39,4 @@
         </div>
       </div>
     <% end %>
-  </div>
+</div>
