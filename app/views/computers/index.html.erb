@@ -1,4 +1,4 @@
-<h2 style="text-align: center">All offerings</h2>
+<h2 style="text-align:center">All offerings</h2>
 
 <div class="d-flex justify-content-between align-items-center">
   <div class="searchbar-container">
@@ -21,9 +21,12 @@
 
 <div class="container cards-grid">
     <% @computers.each do |c| %>
-      <%= link_to computer_path(c) do %>
+      <%= link_to computer_path(c) do%>
         <div class="card-product">
-          <%= cl_image_tag(c.photo.key, height: 300, width: 400, crop: :fill) %>
+          <%# <% if c.image.present? %>
+            <%#= image_tag(c.image) %>
+          <%# end %>
+          <%= cl_image_tag(c.photo.key) %>
           <div class="card-product-infos">
             <div>
               <h2><%= c.name %></h2>
