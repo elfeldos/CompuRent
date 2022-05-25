@@ -3,7 +3,6 @@
     <a class="navbar-brand" href="/">
       <%= image_tag "https://cdn-icons-png.flaticon.com/512/3474/3474353.png" %>
     </a>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,18 +11,16 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active-link">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Explore", computers_path, class: "nav-link #{'active-link' if current_page?(computers_path)}" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Book", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://cdn-icons.flaticon.com/png/512/2202/premium/2202112.png?token=exp=1653382490~hmac=dfda303adc71636ac38a0329150f39c4r", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
+          <li class="nav-item">
+            <%= link_to "Upload", new_computer_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
         <% else %>
           <li class="nav-item">
@@ -34,6 +31,9 @@
           </li>
           <li class="nav-item">
             <%= link_to "Log in", new_user_session_path, class: "nav-link #{'active-link' if current_page?(new_user_session_path)}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Register", new_user_registration_path, class: "nav-link #{'active-link' if current_page?(new_user_registration_path)}" %>
           </li>
         <% end %>
       </ul>
