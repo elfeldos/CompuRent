@@ -106,9 +106,52 @@
 
 .box-item-square{
   width: 300px;
-  height: 300px;
+  height: 472px;
   border: 0.7px solid $neon-purple;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  #user{
+    margin-left: 175px;
+  }
+
+  .price-details{
+    // display: flex;
+    // align-items: flex-end;
+    // flex-wrap: wrap;
+    margin: 5px 0;
+
+    p{
+      display: inline;
+    }
+
+    #price {
+      font-size: 18px;
+      color: $neon-blue;
+    }
+  }
+  h3 {
+    font-family: $oswald-font;
+    font-weight: 400;
+    font-size: 24px;
+  }
+
+  h4{
+    font-family: $oswald-font;
+    font-weight: 200;
+    font-size: 16px;
+  }
+
+  p {
+    font-family: $tech-font;
+    font-size: 12px;
+  }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .box-item-flat{
@@ -118,7 +161,7 @@ border: 0.7px solid $neon-purple;
 padding: 10px;
 font-family: $tech-font;
 font-size: 12px;
-margin-top: 14px;
+margin-top: -120px;
 display: flex;
 flex-direction: column;
 align-content: space-between;
