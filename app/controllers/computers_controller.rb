@@ -16,14 +16,15 @@ class ComputersController < ApplicationController
   end
 
   def new
-    @computers = Computer.new
+    @computer = Computer.new
   end
 
   def create
     @computer = Computer.new(computer_params)
+    @computer.user = current_user
 
     if @computer.save
-      redirect_to @computer, notice: 'Listing was successfully created.'
+      redirect_to computers_path, notice: 'Listing was successfully created.'
     else
       render :new
     end
@@ -51,6 +52,6 @@ class ComputersController < ApplicationController
   private
 
   def computer_params
-    params.require(:computer).permit(:name, :category, :year, :details, :availiability, :price)
+    params.require(:computer).permit(:name, :category, :year, :details, :availiability, :price, :processor, :ram, :storage, :graphic_card)
   end
 end

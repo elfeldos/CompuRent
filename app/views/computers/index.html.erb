@@ -22,7 +22,9 @@
 <div class="container cards-grid">
     <% @computers.each do |c| %>
       <div class="card-product">
-        <%= image_tag(c.image) %>
+        <% if c.image.present? %>
+          <%= image_tag(c.image) %>
+        <% end %>
         <div class="card-product-infos">
           <div>
             <h2><%= c.name %></h2>
