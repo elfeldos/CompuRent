@@ -29,10 +29,9 @@
 
 <div class="container cards-grid">
     <% @computers.last(4).each do |c| %>
+    <%= link_to computer_path(c) do %>
       <div class="card-product">
-        <% if c.image.present? %>
           <%= image_tag(c.image) %>
-        <% end %>
         <div class="card-product-infos">
           <div>
             <h2><%= c.name %></h2>
