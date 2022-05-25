@@ -7,7 +7,7 @@
   <div class="big-card-details">
     <div class="card-img-book">
       <div>
-        <%= image_tag(@computer.image, class: "big-image") %>
+        <%= cl_image_tag(@computer.photo.key, class: 'big-image') %>
       </div>
 
       <div class="box-item-square">
