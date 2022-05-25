@@ -31,6 +31,8 @@ class ComputersController < ApplicationController
   end
 
   def show
+    @computer = Computer.find(params[:id])
+    @user = @computer.user
   end
 
   def edit
