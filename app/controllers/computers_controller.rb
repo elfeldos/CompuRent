@@ -10,7 +10,8 @@ class ComputersController < ApplicationController
 
     if params[:search_by_name].present?
       # @computers = Computer.where(name: params[:search_by_name])
-      @computers = Computer.where('name ILIKE ?', "%#{params[:search_by_name]}%")
+      # @computers = Computer.where('name ILIKE ?', "%#{params[:search_by_name]}%")
+      @computers = Computer.search_computers(params[:search_by_name])
     end
     # raise
     if params[:category] == "PC"
@@ -27,7 +28,7 @@ class ComputersController < ApplicationController
   def create
     @computer = Computer.new(computer_params)
     @computer.user = current_user
-
+    @computer.availiability = true
     if @computer.save
       redirect_to computers_path, notice: 'Listing was successfully created.'
     else
@@ -38,6 +39,12 @@ class ComputersController < ApplicationController
   def show
     @computer = Computer.find(params[:id])
     @user = @computer.user
+
+    # geocoder
+    @markers = [{
+        lat: @computer.latitude,
+        lng: @computer.longitude
+      }]
   end
 
   def edit
@@ -59,6 +66,6 @@ class ComputersController < ApplicationController
   private
 
   def computer_params
-    params.require(:computer).permit(:name, :category, :year, :details, :availiability, :price, :processor, :ram, :storage, :graphic_card, :photo)
+    params.require(:computer).permit(:name, :category, :year, :details, :availiability, :price, :processor, :ram, :storage, :graphic_card, :photo, :address)
   end
 end
