@@ -28,7 +28,7 @@ class ComputersController < ApplicationController
   def create
     @computer = Computer.new(computer_params)
     @computer.user = current_user
-
+    @computer.availiability = true
     if @computer.save
       redirect_to computers_path, notice: 'Listing was successfully created.'
     else
@@ -39,6 +39,12 @@ class ComputersController < ApplicationController
   def show
     @computer = Computer.find(params[:id])
     @user = @computer.user
+
+    # geocoder
+    @markers = [{
+        lat: @computer.latitude,
+        lng: @computer.longitude
+      }]
   end
 
   def edit
@@ -60,6 +66,6 @@ class ComputersController < ApplicationController
   private
 
   def computer_params
-    params.require(:computer).permit(:name, :category, :year, :details, :availiability, :price, :processor, :ram, :storage, :graphic_card, :photo)
+    params.require(:computer).permit(:name, :category, :year, :details, :availiability, :price, :processor, :ram, :storage, :graphic_card, :photo, :address)
   end
 end
