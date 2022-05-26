@@ -19,7 +19,7 @@
         </div>
         <p id="user"><%= @user.first_name %> 4.3 <i class="fa-solid fa-star"></i></p>
         <p> <%= @computer.details %></p>
-        <button class="primary-button-purple"><%= link_to "Book", new_user_registration_path %></button>
+        <button class="primary-button-purple"><%= link_to "Book", new_computer_booking_path(@computer) %></button>
       </div>
     </div>
 
