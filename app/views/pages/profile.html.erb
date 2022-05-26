@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <div class="profile-card-info">
+        <%= image_tag "man.png", class: "profile-image-card" %>
+        <h3><%= @user.username %></h3>
+        <p><%= @user_full_name %></p>
+     </div>
+    </div>
+
+    <div class="col-12 col-md-9 computer-grid-profile">
+      <% @user.computers.each do |computer| %>
+      <div class="computer-card-profile">
+        <%= cl_image_tag(computer.photo.key, class:"image-card-profile") %>
+        <div class="computer-card-info-profile">
+        <% if computer.availiability %>
+          <p><%= computer.name %><i class="fa-solid fa-circle" id="available"></i></p>
+          <% else %>
+          <p><%= computer.name %><i class="fa-solid fa-circle" id="not-available"></i></p>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

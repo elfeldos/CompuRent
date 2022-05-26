@@ -23,10 +23,6 @@
     <% @computers.each do |c| %>
       <%= link_to computer_path(c) do%>
         <div class="card-product">
-          <%# <% if c.photo.attached? %>
-            <%# <%= image_tag(c.photo.key) %>
-          <%# <% end %>
-
           <%= cl_image_tag(c.photo.key) %>
           <div class="card-product-infos">
             <div>
