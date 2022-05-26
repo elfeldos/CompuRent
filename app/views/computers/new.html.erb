@@ -24,7 +24,10 @@
       <%= o.input :graphic_card,
                   required: false,
                   autofocus: true %>
-      <%= o.input :photo, as: :file %>
+      <%= o.input :photo,
+                  as: :file,
+                  required: true %>
+      <%= o.input :address %>
     </div>
 
     <div class="form-actions">
