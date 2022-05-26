@@ -19,7 +19,9 @@
         </div>
         <p id="user"><%= @user.first_name %> 4.3 <i class="fa-solid fa-star"></i></p>
         <p> <%= @computer.details %></p>
+        <% if user_signed_in? %>
         <button class="primary-button-purple"><%= link_to "Book", new_computer_booking_path(@computer) %></button>
+        <% end %>
       </div>
     </div>
 
