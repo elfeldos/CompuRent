@@ -10,7 +10,8 @@ class ComputersController < ApplicationController
 
     if params[:search_by_name].present?
       # @computers = Computer.where(name: params[:search_by_name])
-      @computers = Computer.where('name ILIKE ?', "%#{params[:search_by_name]}%")
+      # @computers = Computer.where('name ILIKE ?', "%#{params[:search_by_name]}%")
+      @computers = Computer.search_computers(params[:search_by_name])
     end
     # raise
     if params[:category] == "PC"
