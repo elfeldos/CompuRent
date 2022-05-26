@@ -11,6 +11,7 @@ require 'open-uri'
 puts "Destroy all..."
 User.destroy_all
 Computer.destroy_all
+Booking.destroy_all
 
 puts "Create users..."
 freddy = User.create!(first_name: 'Frederik', last_name: 'Feldmeier', email:'f.feldmeier98@googlemail.com', password: '123456', username: 'elfeldos', status: 'false')
