@@ -1,7 +1,12 @@
 class ComputersController < ApplicationController
   # code to display all is in pages_controller because of landing page
   def index
-    @computers = Computer.all
+    Computer.all.each do |c|
+      c.bookings.each do |b|
+        b.change_availability_to_true
+      end
+    end
+    @computers = Computer.where(availiability: true)
 
     if params[:search_by_name].present?
       # @computers = Computer.where(name: params[:search_by_name])
