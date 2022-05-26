@@ -6,7 +6,7 @@
           <h1>CompuRent</h1>
           <h1 class="point">.</h1>
         </div>
-        <p>Welcome -name-!</p>
+        <p>Welcome <%= @user.first_name %> !</p>
       </div>
   </div>
 <% else %>
@@ -22,6 +22,7 @@
   </div>
 <% end %>
 
+<%  %>
  <div class="header-point-color" id="title-how">
           <h1>Latest arrivals</h1>
           <h1 class="point">.</h1>
