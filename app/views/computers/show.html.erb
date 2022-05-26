@@ -12,14 +12,21 @@
 
       <div class="box-item-square">
         <h3> <%= @computer.name %></h3>
-        <%= image_tag("map.png", class: "map") %>
+        <%# <%= image_tag("map.png", class: "map") %>
+        <div style="width: 100%; height: 600px;"
+          data-controller="mapbox"
+          data-mapbox-markers-value="<%= @markers.to_json %>"
+          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
         <div class="price-details">
           <p id="price"><%= @computer.price %></p>
           <p>€/month</p>
         </div>
         <p id="user"><%= @user.first_name %> 4.3 <i class="fa-solid fa-star"></i></p>
         <p> <%= @computer.details %></p>
+        <% if user_signed_in? %>
         <button class="primary-button-purple"><%= link_to "Book", new_computer_booking_path(@computer) %></button>
+        <% end %>
       </div>
     </div>
 
