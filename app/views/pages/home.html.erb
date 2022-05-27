@@ -52,24 +52,26 @@
     <% end %>
 </div>
 
-<div class="container-presentation">
-  <div class="header-point-color" id="title-how">
-          <h1>How it works</h1>
-          <h1 class="point">.</h1>
-        </div>
-  <div class="card-presentation-grid">
-    <div class="card-presentation">
-      <%= image_tag 'search.svg' %>
-      <h1>Search</h1>
+<div class="container">
+  <div class="container-presentation">
+    <div class="header-point-color" id="title-how">
+            <h1>How it works</h1>
+            <h1 class="point">.</h1>
+          </div>
+    <div class="card-presentation-grid">
+      <div class="card-presentation">
+        <%= image_tag 'search.svg' %>
+        <h1>Search</h1>
+      </div>
+      <div class="card-presentation">
+        <%= image_tag 'pay.svg' %>
+        <h1>Rent</h1>
+      </div>
+      <div class="card-presentation">
+        <%= image_tag 'pc2.svg' %>
+        <h1>Enjoy</h1>
+      </div>
     </div>
-    <div class="card-presentation">
-      <%= image_tag 'pay.svg' %>
-      <h1>Rent</h1>
-    </div>
-    <div class="card-presentation">
-      <%= image_tag 'computer.svg' %>
-      <h1>Enjoy</h1>
-    </div>
+    <button class="primary-button-purple"><%= link_to "More details", howitworks_path, class:"button-details" %></button>
   </div>
-  <button class="primary-button-purple"><%= link_to "More details", howitworks_path, class:"button-details" %></button>
 </div>
