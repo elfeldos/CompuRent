@@ -69,10 +69,10 @@
 
 /* card presentation for "how it works" */
 .card-presentation{
-  width: 200px;
+  // width: 200px;
   border-radius: 3px;
   text-align: center;
-  padding: 20px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
 
@@ -88,6 +88,7 @@
   font-weight: 400;
   font-size: 16px;
   color: $light-gray;
+  margin-top: 0.5rem;
 }
 
 
@@ -234,5 +235,91 @@ align-content: space-between;
     font-family: $oswald-font;
     font-weight: 200;
     font-size: 14px;
+  }
+}
+
+// Card in how it works
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 55vh;
+  --card-width: 140vh;
+}
+
+
+// body {
+//   min-height: 100vh;
+//   background: #212534;
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+//   padding-top: 2rem;
+//   padding-bottom: 2rem;
+//   box-sizing: border-box;
+// }
+
+
+.card {
+  background-color: $dark-blue;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 1px;
+  position: relative;
+  // border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  // margin: auto;
+  margin-top: 2rem;
+  display: flex;
+}
+
+
+.card::before {
+  content: "";
+  width: 101%;
+  height: 102%;
+  // border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #2CFFF8, #3c67e3 43%, #915AFF);
+    position: absolute;
+    z-index: -1;
+    animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height));
+  left: 0;
+  right: 0;
+  z-index: -1;
+  // height: 100%;
+  // width: 100%;
+  margin: 0 auto;
+  transform: scale(0.2);
+  filter: blur(calc(var(--card-height)));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #2CFFF8, #3c67e3 43%, #915AFF);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
   }
 }

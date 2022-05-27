@@ -1,0 +1,26 @@
+<div class="container d-flex align-items-center flex-column">
+  <div class="header-point-color">
+    <h2>How CompuRent</h2>
+    <h2 class="point">.</h2>
+    <h2>&nbsp;works</h2>
+  </div>
+  <div class="card">
+    <div class="container-presentation">
+        <div class="card-presentation-grid">
+          <div class="card-presentation">
+              <%= image_tag 'search.svg' %>
+              <h1>Simply search on our platform for the product you need or want.</h1>
+          </div>
+          <div class="card-presentation">
+            <%= image_tag 'pay.svg' %>
+            <h1>Easily rent by logging in and choosing one of the available products.</h1>
+          </div>
+          <div class="card-presentation">
+            <%= image_tag 'pc2.svg'%>
+            <h1>Enjoy using your computer for as long as you booked it.</h1>
+          </div>
+          </div>
+        </div>
+  </div>
+  <button class="primary-button-purple how-button"><%= link_to "Register now", new_user_registration_path %></button>
+</div>
