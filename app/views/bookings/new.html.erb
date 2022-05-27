@@ -1,12 +1,21 @@
-<h2>Book a computer</h2>
-<%= simple_form_for [@computer, @booking] do |b| %>
-  <div class="form-inputs">
-        <%= b.input :start_date,
-                    autofocus: true %>
-        <%= b.input :end_date,
-                    autofocus: true %>
-        <div class="form-actions">
-          <%= b.button :submit, "Book", class: 'button-form' %>
-        </div>
-  </div>
-<% end %>
+<div class="form-register-container form-style">
+  <div class="header-point-color" id="book-title">
+            <h1>Book</h1>
+            <h1 class="point">.</h1>
+          </div>
+  <%= simple_form_for [@computer, @booking] do |b| %>
+    <div class="form-inputs">
+          <%= b.input :start_date,
+                      autofocus: true,
+                      input_html: { class:"style-input" },
+                      label_html: { class: "label-form" } %>
+          <%= b.input :end_date,
+                      autofocus: true,
+                      input_html: { class:"style-input" },
+                      label_html: { class: "label-form" } %>
+          <div class="form-actions">
+            <%= b.button :submit, "Book", class: 'button-form' %>
+          </div>
+    </div>
+  <% end %>
+</div>
