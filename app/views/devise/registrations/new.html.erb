@@ -9,52 +9,52 @@
 
   <div class="row">
       <div class="form-inputs" class="col-12 col-md-6 col-lg-4">
-      <div class="row">
-        <div class="col-6 mb-1">
-          <%= f.input :first_name,
-                      required: true,
-                      autofocus: true,
-                      input_html: { class:"style-input" },
-                      label_html: { class: "label-form" }%>
-        </div>
-        <div class="col-6 mb-1">
-          <%= f.input :last_name,
-                      required: true,
-                      autofocus: true,
-                      input_html: { class:"style-input" },
-                      label_html: { class: "label-form" } %>
-        </div>
-        </div>
-        <div class="col-12 mb-1">
-          <%= f.input :username,
-                      required: true,
-                      autofocus: true,
-                      input_html: { class:"style-input" },
-                      label_html: { class: "label-form" } %>
-        </div>
         <div class="row">
-        <div class="col-6 mb-1">
-          <%= f.input :email,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "email", class:"style-input" },
-                      label_html: { class: "label-form" }%>
+          <div class="col-6 mb-1">
+            <%= f.input :first_name,
+                        required: true,
+                        autofocus: true,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" }%>
+          </div>
+          <div class="col-6 mb-1">
+            <%= f.input :last_name,
+                        required: true,
+                        autofocus: true,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" } %>
+          </div>
         </div>
-        <div class="col-6 mb-1">
-          <%= f.input :password,
-                      required: true,
-                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                      hint_html: { class: "hint-form" },
-                      input_html: { autocomplete: "new-password", class:"style-input" },
-                      label_html: { class: "label-form" } %>
+          <div class="col-12 mb-1">
+            <%= f.input :username,
+                        required: true,
+                        autofocus: true,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" } %>
+          </div>
+        <div class="row">
+          <div class="col-6 mb-1">
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email", class:"style-input" },
+                        label_html: { class: "label-form" }%>
+          </div>
+          <div class="col-6 mb-1">
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        hint_html: { class: "hint-form" },
+                        input_html: { autocomplete: "new-password", class:"style-input" },
+                        label_html: { class: "label-form" } %>
+          </div>
         </div>
-        </div>
-        <div class="col-12 mb-0" id="password-confirm">
-          <%= f.input :password_confirmation,
-                      required: true,
-                      input_html: { autocomplete: "new-password", class:"style-input" },
-                      label_html: { class: "label-form" } %>
-        </div>
+          <div class="col-12 mb-0" id="password-confirm">
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password", class:"style-input" },
+                        label_html: { class: "label-form" } %>
+          </div>
       </div>
 
       <div class="form-actions">
