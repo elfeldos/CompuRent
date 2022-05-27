@@ -12,4 +12,7 @@ class PagesController < ApplicationController
     @user_full_name = @user.full_name
     @user.computers
   end
+
+  def how
+  end
 end

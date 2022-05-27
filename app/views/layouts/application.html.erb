@@ -16,7 +16,10 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= yield %>
+
+    <div style="min-height: calc(100vh - 185px);">
+      <%= yield %>
+    </div>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
