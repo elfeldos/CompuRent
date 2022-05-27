@@ -27,3 +27,24 @@
 .active-link {
   color: $neon-blue !important;
 }
+
+.avatar {
+  width: 35px;
+  border-radius: 50%;
+}
+
+.dropdown-item{
+    font-size: 12px;
+    font-family: $tech-font;
+    background-color: $dark-blue;
+    color: $light-gray;
+
+    &:hover{
+      background-color: $dark-blue;
+      color: $neon-purple;
+    }
+}
+.dropdown-menu {
+  background-color: $dark-blue;
+  border: 1px solid $neon-blue;
+}

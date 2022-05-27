@@ -1,37 +1,94 @@
-<div class="container form-style">
-  <h2>Rent your device to somebody else!</h2>
+<div class="form-register-container form-style">
+  <div class="header-point-color" id="rent-title">
+          <h1>Rent your computer</h1>
+          <h1 class="point">.</h1>
+        </div>
     <%= simple_form_for(@computer) do |o| %>
 
-    <div class="form-inputs">
-      <%= o.input :name,
-                  autofocus: true %>
-      <%= o.input :category,
-                  autofocus: true %>
-      <%= o.input :year,
-                  autofocus: true %>
-      <%= o.input :details,
-                  autofocus: true %>
-      <%= o.input :price,
-                  required: true %>
-      <%= o.input :processor,
-                  required: false %>
-      <%= o.input :ram,
-                  required: false,
-                  autofocus: true %>
-      <%= o.input :storage,
-                  required: false,
-                  autofocus: true %>
-      <%= o.input :graphic_card,
-                  required: false,
-                  autofocus: true %>
-      <%= o.input :photo,
-                  as: :file,
-                  required: true %>
-      <%= o.input :address %>
+    <div class="row">
+      <div class="form-inputs" class="col-12 col-md-6 col-lg-4">
+        <div class="row">
+          <div class="col-6 mb-1">
+            <%= o.input :name,
+                        autofocus: true,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" } %>
+          </div>
+          <div class="col-6 mb-1">
+            <%= o.input :year,
+                        autofocus: true,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" } %>
+          </div>
+        </div>
+          <div class="col-12 mb-1">
+            <%= o.input :details,
+                        autofocus: true,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" } %>
+          </div>
+        <div class="row">
+          <div class="col-6 mb-1">
+            <%= o.input :category, collection: ["PC", "Laptop"],
+                        autofocus: true,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" } %>
+          </div>
+          <div class="col-6 mb-1">
+            <%= o.input :price,
+                        required: true,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" } %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 mb-1">
+            <%= o.input :processor,
+                        required: false,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" } %>
+          </div>
+          <div class="col-6 mb-1">
+            <%= o.input :ram,
+                        required: false,
+                        autofocus: true,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" } %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 mb-1">
+            <%= o.input :storage,
+                        required: false,
+                        autofocus: true,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" } %>
+          </div>
+          <div class="col-6 mb-1">
+            <%= o.input :graphic_card,
+                        required: false,
+                        autofocus: true,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" } %>
+          </div>
+        </div>
+        <div class="col-12 mb-1">
+            <%= o.input :photo,
+                        as: :file,
+                        required: true,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" } %>
+        </div>
+        <div class="col-12 mb-1">
+            <%= o.input :address,
+                        input_html: { class:"style-input" },
+                        label_html: { class: "label-form" } %>
+        </div>
+      </div>
     </div>
 
-    <div class="form-actions">
-      <%= o.button :submit, "Upload", class: 'button-form' %>
-    </div>
+      <div class="form-actions">
+        <%= o.button :submit, "Upload", class: 'button-form' %>
+      </div>
   <% end %>
 </div>
