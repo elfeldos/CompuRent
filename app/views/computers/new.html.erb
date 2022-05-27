@@ -29,7 +29,7 @@
           </div>
         <div class="row">
           <div class="col-6 mb-1">
-            <%= o.input :category,
+            <%= o.input :category, collection: ["PC", "Laptop"],
                         autofocus: true,
                         input_html: { class:"style-input" },
                         label_html: { class: "label-form" } %>
