@@ -1,10 +1,13 @@
-<h2 style="text-align:center">All offerings</h2>
+ <div class="header-point-color" id="index-title">
+          <h1>All computers</h1>
+          <h1 class="point">.</h1>
+        </div>
 
 <div class="d-flex justify-content-between align-items-center">
   <div class="searchbar-container">
     <%= form_tag "/computers", method: "GET" do %>
-      <%= text_field_tag :search_by_name, params[:search_by_name], placeholder: "Search by name" %>
-      <%= submit_tag "Search" %>
+      <%= text_field_tag :search_by_name, params[:search_by_name], placeholder: "Search by name", class:"style-search-input"%>
+      <%= submit_tag "Search", class: "primary-button-purple" %>
     <% end %>
   </div>
 
@@ -13,8 +16,8 @@
       <%= select_tag(:category,
           options_for_select(Computer::CATEGORIES),
           # class: "form-control shadow-none form-width",
-          prompt: "Category", class: "search-field") %>
-      <%= submit_tag "Search", class: "submit-button-purple"%>
+          prompt: "Category", class: "style-category-input") %>
+      <%= submit_tag "Search", class: "primary-button-purple"%>
     <% end %>
   </div>
 </div>
