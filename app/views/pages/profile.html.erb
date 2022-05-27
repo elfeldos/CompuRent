@@ -10,16 +10,18 @@
 
     <div class="col-12 col-md-9 computer-grid-profile">
       <% @user.computers.each do |computer| %>
-      <div class="computer-card-profile">
-        <%= cl_image_tag(computer.photo.key, class:"image-card-profile") %>
-        <div class="computer-card-info-profile">
-        <% if computer.availiability %>
-          <p><%= computer.name %><i class="fa-solid fa-circle" id="available"></i></p>
-          <% else %>
-          <p><%= computer.name %><i class="fa-solid fa-circle" id="not-available"></i></p>
-          <% end %>
-        </div>
-      </div>
+        <%= link_to computer_path(computer) do%>
+          <div class="computer-card-profile">
+            <%= cl_image_tag(computer.photo.key, class:"image-card-profile") %>
+            <div class="computer-card-info-profile">
+            <% if computer.availiability %>
+              <p><%= computer.name %><i class="fa-solid fa-circle" id="available"></i></p>
+              <% else %>
+              <p><%= computer.name %><i class="fa-solid fa-circle" id="not-available"></i></p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

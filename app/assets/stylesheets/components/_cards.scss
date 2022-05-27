@@ -16,7 +16,8 @@
   }
 
   img {
-    height: 160px;
+    max-height: 160px !important;
+    min-height: 160px !important;
     width: 100%;
     object-fit: cover;
     padding: 5px;
