@@ -1,4 +1,4 @@
-<h1> Welcome to CompuRent 📚👯‍♀️</h1>
+<h1> Welcome to CompuRent 🖥 </h1>
 
 Online marketplace to rent and lend computers, inspired by Airbnb. Renters can browse for available computers and reserve them for specific dates. Lenders list details and upload images of their computers.
 
