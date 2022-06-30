@@ -1,9 +1,10 @@
-
 <div class="container">
+  <!-----Return arrow---->
   <%= link_to computers_path do %>
     <i class="fa-solid fa-arrow-left-long"></i>
   <% end %>
 
+  <!----Computer card--->
   <div class="big-card-details">
     <div class="card-img-book">
       <div>
@@ -12,7 +13,7 @@
 
       <div class="box-item-square">
         <h3> <%= @computer.name %></h3>
-        <%# <%= image_tag("map.png", class: "map") %>
+        <!--- MAP --->
         <div style="width: 100%; height: 600px;"
           data-controller="mapbox"
           data-mapbox-markers-value="<%= @markers.to_json %>"
@@ -25,11 +26,12 @@
         <p id="user"><%= @user.first_name %> 4.3 <i class="fa-solid fa-star"></i></p>
         <p> <%= @computer.details %></p>
         <% if user_signed_in? %>
-        <button class="primary-button-purple"><%= link_to "Book", new_computer_booking_path(@computer) %></button>
+          <button class="primary-button-purple"><%= link_to "Book", new_computer_booking_path(@computer) %></button>
         <% end %>
       </div>
     </div>
 
+    <!---All info--->
     <div class="box-item-flat">
       <ul>
         <li>Year: <%= @computer.year %></li>
@@ -39,6 +41,5 @@
         <li>Graphic card: <%= @computer.graphic_card %></li>
       </ul>
     </div>
-
   </div>
 </div>
