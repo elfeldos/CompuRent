@@ -1,5 +1,4 @@
 class ComputersController < ApplicationController
-  # code to display all is in pages_controller because of landing page
   def index
     Computer.all.each do |c|
       c.bookings.each do |b|
@@ -9,11 +8,9 @@ class ComputersController < ApplicationController
     @computers = Computer.where(availiability: true)
 
     if params[:search_by_name].present?
-      # @computers = Computer.where(name: params[:search_by_name])
-      # @computers = Computer.where('name ILIKE ?', "%#{params[:search_by_name]}%")
       @computers = Computer.search_computers(params[:search_by_name])
     end
-    # raise
+
     if params[:category] == "PC"
       @computers = Computer.where(category: "PC")
     elsif params[:category] == "Laptop"
@@ -52,7 +49,7 @@ class ComputersController < ApplicationController
 
   def update
     if @computer.update(computer_params)
-      redirect_to @computer, notice: 'Listing was successfully updated.'
+      redirect_to @computer, notice: 'Computer was successfully updated.'
     else
       render :edit
     end
@@ -60,7 +57,7 @@ class ComputersController < ApplicationController
 
   def destroy
     @computer.destroy
-    redirect_to computers_url, notice: 'Listing was successfully destroyed.'
+    redirect_to computers_url, notice: 'Computer was successfully destroyed.'
   end
 
   private

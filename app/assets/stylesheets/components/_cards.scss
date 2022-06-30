@@ -70,7 +70,6 @@
 
 /* card presentation for "how it works" */
 .card-presentation{
-  // width: 200px;
   border-radius: 3px;
   text-align: center;
   padding: 2rem;
@@ -120,9 +119,6 @@
   }
 
   .price-details{
-    // display: flex;
-    // align-items: flex-end;
-    // flex-wrap: wrap;
     margin: 5px 0;
 
     p{
@@ -252,32 +248,17 @@ align-content: space-between;
   --card-width: 140vh;
 }
 
-
-// body {
-//   min-height: 100vh;
-//   background: #212534;
-//   display: flex;
-//   align-items: center;
-//   flex-direction: column;
-//   padding-top: 2rem;
-//   padding-bottom: 2rem;
-//   box-sizing: border-box;
-// }
-
-
 .card {
   background-color: $dark-blue;
   width: var(--card-width);
   height: var(--card-height);
   padding: 1px;
   position: relative;
-  // border-radius: 6px;
   justify-content: center;
   align-items: center;
   text-align: center;
   display: flex;
   font-size: 1.5em;
-  // margin: auto;
   margin-top: 2rem;
   display: flex;
 }
@@ -287,7 +268,6 @@ align-content: space-between;
   content: "";
   width: 101%;
   height: 102%;
-  // border-radius: 8px;
   background-image: linear-gradient(
     var(--rotate)
     , #2CFFF8, #3c67e3 43%, #915AFF);
@@ -303,8 +283,6 @@ align-content: space-between;
   left: 0;
   right: 0;
   z-index: -1;
-  // height: 100%;
-  // width: 100%;
   margin: 0 auto;
   transform: scale(0.2);
   filter: blur(calc(var(--card-height)));
