@@ -14,10 +14,10 @@
           <div class="computer-card-profile">
             <%= cl_image_tag(computer.photo.key, class:"image-card-profile") %>
             <div class="computer-card-info-profile">
-            <% if computer.availiability %>
-              <p><%= computer.name %><i class="fa-solid fa-circle" id="available"></i></p>
+              <% if computer.availiability %>
+                <p><%= computer.name %><i class="fa-solid fa-circle" id="available"></i></p>
               <% else %>
-              <p><%= computer.name %><i class="fa-solid fa-circle" id="not-available"></i></p>
+                <p><%= computer.name %><i class="fa-solid fa-circle" id="not-available"></i></p>
               <% end %>
             </div>
           </div>
